@@ -1,0 +1,9 @@
+project: savantenvs/wabt
+target: wasm_interp_fuzzer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/wasm_interp_fuzzer/testsuite
+cmds:
+  - cmd: /mayhem/wasm_interp_fuzzer
+    libfuzzer: true
+    timeout: 10
