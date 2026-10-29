@@ -1,0 +1,10 @@
+project: savantenvs/wabt
+target: wat2wasm_fuzzer
+testsuite:
+  - https://$MAYHEM_DOMAIN/$MAYHEM_PROJECT/$MAYHEM_TARGET/testsuite.tar
+  - file://mayhem/wat2wasm_fuzzer/testsuite
+cmds:
+  - cmd: /mayhem/wat2wasm_fuzzer
+    libfuzzer: true
+    timeout: 5
+    dictionary: /mayhem/fuzz-in/wast.dict
